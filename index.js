@@ -1,29 +1,30 @@
+const username = prompt('Please Tell Us Your Name'); //user prompt
+const db = firebase.database();
+
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+// import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyDkCM8DntB3i82diAT6C4VCIiMzbOobIAs",
-  authDomain: "groovehub-bf56e.firebaseapp.com",
-  databaseURL: "https://groovehub-bf56e-default-rtdb.firebaseio.com",
-  projectId: "groovehub-bf56e",
-  storageBucket: "groovehub-bf56e.appspot.com",
-  messagingSenderId: "291728374045",
-  appId: "1:291728374045:web:6da5d60b335fa242b3c9f4",
-  measurementId: "G-EGJP9W63KS"
-};
-
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDkCM8DntB3i82diAT6C4VCIiMzbOobIAs",
+//   authDomain: "groovehub-bf56e.firebaseapp.com",
+//   databaseURL: "https://groovehub-bf56e-default-rtdb.firebaseio.com",
+//   projectId: "groovehub-bf56e",
+//   storageBucket: "groovehub-bf56e.appspot.com",
+//   messagingSenderId: "291728374045",
+//   appId: "1:291728374045:web:6da5d60b335fa242b3c9f4",
+//   measurementId: "G-EGJP9W63KS"
+// };
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = firebase.database();
+// const app = firebase.initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
-const username = prompt('Please Tell Us Your Name');
 
-function sendMessage(e) {
+// changed sendMessage function to global scope to handle the on submit 
+window.sendMessage = function (e) {
   e.preventDefault();
 
   // get values to be submitted
